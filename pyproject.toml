@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "swizio-diagram-generator"
+version = "0.1.0"
+description = "An async Python API to create diagrams from natural language using an LLM agent."
+readme = "README.md"
+authors = [{ name = "Vlad Belmach", email = "your@email.com" }]
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Framework :: FastAPI",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "diagrams",
+    "google-generativeai",
+    "python-dotenv",
+    "pydantic-settings",
+]
+
+[project.urls]
+Homepage = "https://github.com/vladbelms/Swizio"
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+    "ruff",
+]
+
+
+[tool.ruff]
+line-length = 120
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = []
+
+[tool.ruff.format]
+quote-style = "double"
+
+# Настройки для Pytest
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+asyncio_mode = "auto"
+testpaths = ["tests"]
