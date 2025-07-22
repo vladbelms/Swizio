@@ -41,9 +41,9 @@ def run_agent(user_prompt: str) -> str:
         tools = [add_node, link_nodes, render_diagram]
 
         llm = ChatGoogleGenerativeAI(
-            model="gemini-2.0-flash-lite",
+            model="gemini-2.0-flash",
             google_api_key=settings.GEMINI_API_KEY,
-            temperature=0.0
+            temperature=1.0
         )
 
         available_nodes = ", ".join(NODE_TYPE_MAP.keys())
