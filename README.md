@@ -99,16 +99,8 @@ docker-compose up --build
 
 ### 4. Run the Application
 
-#### Backend API
 
-```bash
-# Start the FastAPI server
-uvicorn src.api:app --host 0.0.0.0 --port 8000 --reload
-```
-
-The API will be available at `http://localhost:8000`
-
-#### Frontend Interface
+#### Interface
 
 ```bash
 # Start the Streamlit app (in a new terminal)
