@@ -16,11 +16,11 @@
   [![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red.svg)](https://streamlit.io/)
   [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 
-## 🚀 Overview
+## Overview
 
 Swizio is an intelligent AI-powered diagram generator that transforms natural language descriptions into professional architecture diagrams. Using advanced LLM agents and the power of Google's Gemini AI, Swizio understands your architectural concepts and automatically generates visual representations with proper component relationships.
 
-### ✨ Key Features
+### Key Features
 
 - **Natural Language Processing**: Describe your architecture in plain English
 - **Intelligent Component Recognition**: Automatically identifies and suggests appropriate components
@@ -31,30 +31,7 @@ Swizio is an intelligent AI-powered diagram generator that transforms natural la
 - **History Management**: Keep track of your generated diagrams
 - **RESTful API**: Easy integration with existing workflows
 
-## 🏗️ Architecture
-
-Swizio consists of three main components:
-
-1. **FastAPI Backend**: Handles diagram generation requests and orchestrates the AI agent
-2. **LangChain Agent**: Processes natural language and constructs diagrams using specialized tools
-3. **Streamlit Frontend**: Provides an intuitive web interface for users
-
-## 🛠️ Technology Stack
-
-- **Backend**: FastAPI, Python 3.10+
-- **AI/ML**: LangChain, Google Gemini AI, LangChain Google GenAI
-- **Diagram Generation**: Python Diagrams library
-- **Frontend**: Streamlit
-- **Containerization**: Docker, Docker Compose
-- **Testing**: Pytest, HTTPx
-
-## 📋 Prerequisites
-
-- Python 3.10 or higher
-- Docker and Docker Compose (optional, for containerized deployment)
-- Google Gemini API key
-
-## 🚀 Quick Start
+## Quick Start
 
 Install **uv**, a modern, fast Python package manager used in this project:
 
@@ -164,7 +141,32 @@ docker-compose down
 
 This removes the container and frees up resources.
 
-## 📖 Usage
+
+## Architecture
+
+Swizio consists of three main components:
+
+1. **FastAPI Backend**: Handles diagram generation requests and orchestrates the AI agent
+2. **LangChain Agent**: Processes natural language and constructs diagrams using specialized tools
+3. **Streamlit Frontend**: Provides an intuitive web interface for users
+
+## Technology Stack
+
+- **Backend**: FastAPI, Python 3.10+
+- **AI/ML**: LangChain, Google Gemini AI, LangChain Google GenAI
+- **Diagram Generation**: Python Diagrams library
+- **Frontend**: Streamlit
+- **Containerization**: Docker, Docker Compose
+- **Testing**: Pytest, HTTPx
+
+## Prerequisites
+
+- Python 3.10 or higher
+- Docker and Docker Compose (optional, for containerized deployment)
+- Google Gemini API key
+
+
+## Usage
 
 ### Web Interface
 
@@ -190,7 +192,7 @@ curl -X POST "http://localhost:8000/diagrams/generate" \
 - `"A data pipeline with a Kafka source, a Spark processing cluster, and writing to an S3 bucket"`
 - `"A serverless architecture with Lambda functions, API Gateway, and DynamoDB"`
 
-## 🎯 Supported Components
+## Supported Components
 
 Currently supported diagram components:
 
@@ -201,7 +203,7 @@ Currently supported diagram components:
 
 *More components are being added regularly!*
 
-## 🧪 Testing
+## Testing
 
 Run the test suite to ensure everything is working correctly:
 
@@ -216,7 +218,7 @@ pytest
 pytest --cov=src tests/
 ```
 
-## 🔧 Configuration
+## Configuration
 
 The application can be configured through environment variables:
 
@@ -224,7 +226,7 @@ The application can be configured through environment variables:
 |----------|-------------|----------|---------|
 | `GEMINI_API_KEY` | Google Gemini API key | Yes | Yes     |
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Swizio/
@@ -246,7 +248,7 @@ Swizio/
 └── README.md           # This file
 ```
 
-## 🚀 Development
+## Development
 
 ### Setting Up Development Environment
 
@@ -272,7 +274,7 @@ To add support for new diagram components:
 3. Update the agent prompt in `src/agent.py` to include the new component
 4. Add tests for the new component
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see our contributing guidelines:
 
@@ -285,11 +287,11 @@ We welcome contributions! Please see our contributing guidelines:
 7. Push to the branch (`git push origin feature/amazing-feature`)
 8. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [LangChain](https://langchain.com/) for the agent framework
 - [Google Gemini AI](https://ai.google.dev/) for natural language processing
