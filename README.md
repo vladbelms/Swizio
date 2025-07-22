@@ -56,58 +56,113 @@ Swizio consists of three main components:
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+Install **uv**, a modern, fast Python package manager used in this project:
+
+```bash
+pip install uv
+```
+
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/vladbelms/Swizio.git
 cd Swizio
 ```
 
-### 2. Set Up Environment
+### 2. Create and configure the `.env` file
 
-Create a `.env` file from the example:
+This file stores your secret Gemini API key.
 
 ```bash
+# macOS / Linux
 cp .env.example .env
+
+# Windows
+copy .env.example .env
 ```
 
-Add your Google Gemini API key to the `.env` file:
+Open the `.env` file in a text editor and set your Gemini API key:
 
 ```env
-GEMINI_API_KEY=your_actual_api_key_here
+GEMINI_API_KEY=AIzaSyA...your_key_here...
 ```
 
-### 3. Installation Options
+Save and close the file.
 
-#### Option A: Local Development
+### 3. Create and activate a virtual environment
+
+This isolates your project dependencies from the global system.
 
 ```bash
-# Install dependencies
-pip install -e .
+uv venv
+```
 
-# Or using uv (recommended)
-pip install uv
+Activate it:
+
+```bash
+# macOS / Linux
+source .venv/bin/activate
+
+# Windows
+.\.venv\Scripts\activate
+```
+
+You should now see `(.venv)` at the beginning of your terminal prompt.
+
+### 4. Install dependencies
+
+Install all required packages from `pyproject.toml`:
+
+```bash
 uv pip install -r pyproject.toml
 ```
 
-#### Option B: Docker Deployment
+The project has two parts: **backend** (Docker) and **frontend** (Streamlit). Run them in separate terminal windows.
+
+### 5. Start the backend (Docker)
+
+In the **first terminal**:
+* Deactivate the virtual environment if it's active: `deactivate`
+* Make sure Docker Desktop is running
+* Run:
 
 ```bash
-# Build and run with Docker Compose
 docker-compose up --build
 ```
 
-### 4. Run the Application
+Wait until you see a message from Uvicorn indicating the server is running. Leave this terminal open.
 
+### 6. Start the frontend (Streamlit)
 
-#### Interface
+In the **second terminal**:
+* Activate the virtual environment:
 
 ```bash
-# Start the Streamlit app (in a new terminal)
-streamlit run app.py
+source .venv/bin/activate
 ```
 
-The web interface will be available at `http://localhost:8501`
+* Start the frontend:
+
+```bash
+# If you haven't renamed the file
+streamlit run app.py
+
+# If renamed to something like frontend_app.py
+# streamlit run frontend_app.py
+```
+
+A new browser tab should open with the web interface.
+
+### 7. Shutting Down
+
+* To stop the frontend: in the second terminal, press `Ctrl + C`
+* To stop the backend: in the first terminal, press `Ctrl + C`, then run:
+
+```bash
+docker-compose down
+```
+
+This removes the container and frees up resources.
 
 ## 📖 Usage
 
@@ -241,4 +296,3 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 - [Python Diagrams](https://diagrams.mingrammer.com/) for diagram generation
 - [FastAPI](https://fastapi.tiangolo.com/) for the robust API framework
 - [Streamlit](https://streamlit.io/) for the beautiful web interface
-
