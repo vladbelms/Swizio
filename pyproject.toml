@@ -43,7 +43,6 @@ Homepage = "https://github.com/vladbelms/Swizio"
 [project.optional-dependencies]
 dev = [
     "pytest",
-    "pytest-asyncio",
     "httpx",
     "ruff",
 ]
@@ -57,8 +56,7 @@ ignore = []
 [tool.ruff.format]
 quote-style = "double"
 
-# Настройки для Pytest
 [tool.pytest.ini_options]
 pythonpath = ["src"]
-asyncio_mode = "auto"
 testpaths = ["tests"]
+anyio_backend = "asyncio"

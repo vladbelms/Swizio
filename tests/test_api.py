@@ -6,7 +6,7 @@ from src.api import app
 client = TestClient(app)
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_generate_diagram_success(monkeypatch, tmp_path):
     """
     Tests the "happy path" of the API.
@@ -30,7 +30,7 @@ async def test_generate_diagram_success(monkeypatch, tmp_path):
     assert not os.path.exists(fake_file_path)
 
 
-@pytest.mark.asyncio
+@pytest.mark.anyio
 async def test_generate_diagram_agent_failure(monkeypatch):
     """
     Tests the "sad path" of the API.
