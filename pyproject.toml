@@ -27,6 +27,13 @@ dependencies = [
     "google-generativeai",
     "python-dotenv",
     "pydantic-settings",
+    "langchain",
+    "langchain-google-genai",
+    "langchain-core",
+    "streamlit",
+    "requests",
+    "pytest",
+
 ]
 
 [project.urls]

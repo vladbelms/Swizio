@@ -1,3 +1,4 @@
 .env
 
 swizio_diagram_generator.egg-info/
+generated_diagrams/
